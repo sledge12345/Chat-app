@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ephemeral chat</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="landing" class="screen">
+    <div class="landing-card">
+      <h1>ephemeral chat</h1>
+      <p class="subtitle">no accounts. rooms disappear when they go quiet.</p>
+      <input id="room-name" type="text" placeholder="room name (optional)" />
+      <button id="create-room-btn">create a room</button>
+      <p class="hint">got a link? just open it — you'll land here automatically.</p>
+    </div>
+  </div>
+
+  <div id="chat" class="screen hidden">
+    <header class="chat-header">
+      <div>
+        <h2 id="room-title">room</h2>
+        <span id="presence-count" class="muted">0 online</span>
+      </div>
+      <button id="share-link-btn">copy invite link</button>
+    </header>
+
+    <div id="messages" class="messages"></div>
+
+    <form id="composer" class="composer">
+      <label class="file-btn" title="share a file">
+        📎
+        <input id="file-input" type="file" hidden />
+      </label>
+      <input id="message-input" type="text" placeholder="message" autocomplete="off" />
+      <button type="submit">send</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.ably.com/lib/ably.min-1.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
